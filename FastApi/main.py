@@ -18,6 +18,9 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+#router integration
+router = FastAPI().api_route
+
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/token")
 
 #middleware
