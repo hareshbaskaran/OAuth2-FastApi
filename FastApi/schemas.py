@@ -22,3 +22,27 @@ class Product(ProductBase):
 
     class Config:
         orm_mode = True
+
+class UserBase(BaseModel):
+    email: str
+    phone_number: str
+
+
+class UserCreate(UserBase):
+    hashed_password: str
+
+
+class User(UserBase):
+    id: int
+
+    class Config:
+        orm_mode = True
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+
+class TokenData(BaseModel):
+    email: Optional[str] = None
